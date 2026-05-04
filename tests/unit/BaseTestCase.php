@@ -17,6 +17,9 @@ use Brain\Monkey;
 use Mockery;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Shared setup/teardown for every Lessly unit test.
+ */
 abstract class BaseTestCase extends TestCase {
 
 	/**

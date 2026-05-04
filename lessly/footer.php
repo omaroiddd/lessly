@@ -17,6 +17,10 @@
 
 </div><!-- #page -->
 
+<p class="text-sm text-center py-4">
+	<?php echo esc_html( lessly_get_copyright_text() ); ?>
+</p>
+
 <?php wp_footer(); ?>
 
 </body>

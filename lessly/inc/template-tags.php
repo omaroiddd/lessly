@@ -7,6 +7,30 @@
  * @package lessly
  */
 
+declare( strict_types=1 );
+
+if ( ! function_exists( 'lessly_get_copyright_text' ) ) :
+	/**
+	 * Builds the site copyright line.
+	 *
+	 * Returns a translatable string of the form
+	 * "© {current year} {site name}. All rights reserved." The year comes from
+	 * `gmdate()` so it is timezone-independent and deterministic in tests.
+	 * Numbered sprintf placeholders allow translators to reorder the year and
+	 * site name as needed for their locale.
+	 *
+	 * @return string Translated copyright line.
+	 */
+	function lessly_get_copyright_text(): string {
+		return sprintf(
+			/* translators: 1: current year (4-digit), 2: site name. */
+			__( '© %1$d %2$s. All rights reserved.', 'lessly' ),
+			(int) gmdate( 'Y' ),
+			get_bloginfo( 'name' )
+		);
+	}
+endif;
+
 if ( ! function_exists( 'lessly_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.

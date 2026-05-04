@@ -17,6 +17,10 @@ use Brain\Monkey\Functions;
 use Brain\Monkey\Filters;
 use Brain\Monkey\Actions;
 
+/**
+ * Reference test illustrating Brain Monkey patterns. Safe to delete once
+ * the project has its own test suite.
+ */
 final class ExampleTest extends BaseTestCase {
 
 	/**

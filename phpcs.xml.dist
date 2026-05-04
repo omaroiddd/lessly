@@ -25,6 +25,12 @@
 	<!-- Exclude patterns. -->
 	<exclude-pattern>/vendor/*</exclude-pattern>
 	<exclude-pattern>/node_modules/*</exclude-pattern>
+	<!--
+	scripts/ holds project tooling (PHP that runs in CLI context, not WordPress).
+	WP-Extra rules around globals, escaping, and discouraged functions don't apply
+	there, just like node_scripts/ holds Node tooling outside the JS lint scope.
+	-->
+	<exclude-pattern>/scripts/*</exclude-pattern>
 
 	<!-- Include the WordPress-Extra standard. -->
 	<rule ref="WordPress-Extra">
@@ -84,6 +90,22 @@
 		<properties>
 			<property name="is_theme" value="true"/>
 		</properties>
+		<!--
+		Tests use PSR-4 autoloading (configured in composer.json), which requires
+		filenames to match the class name in PascalCase. That is incompatible with
+		WordPress's kebab-case theme file naming, so this sniff is scoped to skip
+		tests/ while remaining in force for theme code under lessly/.
+		-->
+		<exclude-pattern>/tests/*</exclude-pattern>
+	</rule>
+
+	<!--
+	Test classes don't need their own docblock — the file-level @package and
+	the per-method docs already convey intent. This sniff stays in force for
+	theme code under lessly/.
+	-->
+	<rule ref="Squiz.Commenting.ClassComment.Missing">
+		<exclude-pattern>/tests/*</exclude-pattern>
 	</rule>
 
 </ruleset>
