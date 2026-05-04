@@ -27,42 +27,42 @@
  * replace `-neutral` with `-lessly`.
  */
 @utility prose-lessly {
-	--tw-prose-body: --theme(--color-foreground, initial);
-	--tw-prose-headings: --theme(--color-foreground, initial);
-	--tw-prose-lead: --theme(--color-foreground, initial);
+	--tw-prose-body: --theme(--color-contrast, initial);
+	--tw-prose-headings: --theme(--color-contrast, initial);
+	--tw-prose-lead: --theme(--color-contrast, initial);
 	--tw-prose-links: --theme(--color-primary, initial);
-	--tw-prose-bold: --theme(--color-foreground, initial);
-	--tw-prose-counters: --theme(--color-foreground, initial);
-	--tw-prose-bullets: --theme(--color-foreground, initial);
-	--tw-prose-hr: --theme(--color-foreground, initial);
-	--tw-prose-quotes: --theme(--color-foreground, initial);
+	--tw-prose-bold: --theme(--color-contrast, initial);
+	--tw-prose-counters: --theme(--color-contrast, initial);
+	--tw-prose-bullets: --theme(--color-contrast, initial);
+	--tw-prose-hr: --theme(--color-contrast, initial);
+	--tw-prose-quotes: --theme(--color-contrast, initial);
 	--tw-prose-quote-borders: --theme(--color-primary, initial);
-	--tw-prose-captions: --theme(--color-foreground, initial);
-	--tw-prose-kbd: --theme(--color-foreground, initial);
-	--tw-prose-kbd-shadows: --theme(--color-foreground, initial);
-	--tw-prose-code: --theme(--color-foreground, initial);
-	--tw-prose-pre-code: --theme(--color-background, initial);
-	--tw-prose-pre-bg: --theme(--color-foreground, initial);
-	--tw-prose-th-borders: --theme(--color-foreground, initial);
-	--tw-prose-td-borders: --theme(--color-foreground, initial);
-	--tw-prose-invert-body: --theme(--color-background, initial);
-	--tw-prose-invert-headings: --theme(--color-background, initial);
-	--tw-prose-invert-lead: --theme(--color-background, initial);
+	--tw-prose-captions: --theme(--color-contrast, initial);
+	--tw-prose-kbd: --theme(--color-contrast, initial);
+	--tw-prose-kbd-shadows: --theme(--color-contrast, initial);
+	--tw-prose-code: --theme(--color-contrast, initial);
+	--tw-prose-pre-code: --theme(--color-base, initial);
+	--tw-prose-pre-bg: --theme(--color-contrast, initial);
+	--tw-prose-th-borders: --theme(--color-contrast, initial);
+	--tw-prose-td-borders: --theme(--color-contrast, initial);
+	--tw-prose-invert-body: --theme(--color-base, initial);
+	--tw-prose-invert-headings: --theme(--color-base, initial);
+	--tw-prose-invert-lead: --theme(--color-base, initial);
 	--tw-prose-invert-links: --theme(--color-primary, initial);
-	--tw-prose-invert-bold: --theme(--color-background, initial);
-	--tw-prose-invert-counters: --theme(--color-background, initial);
-	--tw-prose-invert-bullets: --theme(--color-background, initial);
-	--tw-prose-invert-hr: --theme(--color-background, initial);
-	--tw-prose-invert-quotes: --theme(--color-background, initial);
+	--tw-prose-invert-bold: --theme(--color-base, initial);
+	--tw-prose-invert-counters: --theme(--color-base, initial);
+	--tw-prose-invert-bullets: --theme(--color-base, initial);
+	--tw-prose-invert-hr: --theme(--color-base, initial);
+	--tw-prose-invert-quotes: --theme(--color-base, initial);
 	--tw-prose-invert-quote-borders: --theme(--color-primary, initial);
-	--tw-prose-invert-captions: --theme(--color-background, initial);
-	--tw-prose-invert-kbd: --theme(--color-background, initial);
-	--tw-prose-invert-kbd-shadows: --theme(--color-background, initial);
-	--tw-prose-invert-code: --theme(--color-background, initial);
-	--tw-prose-invert-pre-code: --theme(--color-foreground, initial);
-	--tw-prose-invert-pre-bg: --theme(--color-background, initial);
-	--tw-prose-invert-th-borders: --theme(--color-background, initial);
-	--tw-prose-invert-td-borders: --theme(--color-background, initial);
+	--tw-prose-invert-captions: --theme(--color-base, initial);
+	--tw-prose-invert-kbd: --theme(--color-base, initial);
+	--tw-prose-invert-kbd-shadows: --theme(--color-base, initial);
+	--tw-prose-invert-code: --theme(--color-base, initial);
+	--tw-prose-invert-pre-code: --theme(--color-contrast, initial);
+	--tw-prose-invert-pre-bg: --theme(--color-base, initial);
+	--tw-prose-invert-th-borders: --theme(--color-base, initial);
+	--tw-prose-invert-td-borders: --theme(--color-base, initial);
 }
 
 /**

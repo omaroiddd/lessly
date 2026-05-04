@@ -2,49 +2,75 @@
  * Add your design tokens as Tailwind theme variables.
  *
  * https://tailwindcss.com/docs/theme
- */
-
-/**
- * Your theme variables are merged with Tailwind’s defaults, either extending
- * the default theme with new variables or overriding the values of existing
- * variables.
+ *
+ * theme.json is the source of truth for the five named colors below
+ * (base / contrast / primary / secondary / tertiary). They reach
+ * Tailwind via the --wp--preset--color--{slug} CSS variables that
+ * WordPress emits from theme.json.
+ *
+ * The numeric primary scale (50-950) is generated here in OKLCH and
+ * is independent of the customizable primary token. It exists so
+ * Tailwind utilities like `bg-primary-100` or `text-primary-700`
+ * resolve to perceptually-smooth shades of the original blue family.
  */
 @theme {
 	/**
-	 * These theme variables use CSS variables set by WordPress using values
-	 * from your `theme.json` file.
+	 * Named colors mapped from theme.json.
 	 *
-	 * If you are using the classic editor, you should use hardcoded color
-	 * values instead of the `var()` functions below.
-     */
-	--color-background: var(--wp--preset--color--background);
-	--color-foreground: var(--wp--preset--color--foreground);
+	 * NOTE: These resolve to var(--wp--preset--color--*) which only
+	 * exists on the front end and modern block editor — classic-editor
+	 * / TinyMCE contexts will not have them.
+	 */
+	--color-base: var(--wp--preset--color--base);
+	--color-contrast: var(--wp--preset--color--contrast);
 	--color-primary: var(--wp--preset--color--primary);
 	--color-secondary: var(--wp--preset--color--secondary);
 	--color-tertiary: var(--wp--preset--color--tertiary);
+
+	/**
+	 * Extended primary scale in OKLCH.
+	 *
+	 * Anchored at 500 = #2563EB (≈ oklch(55.2% 0.212 262)). Hue is held
+	 * at 262°; lightness steps are perceptually even; chroma peaks near
+	 * 600 and tapers toward 50 and 950 to keep the extremes neutral.
+	 */
+	--color-primary-50: oklch(97% 0.018 262);
+	--color-primary-100: oklch(92% 0.045 262);
+	--color-primary-200: oklch(85% 0.085 262);
+	--color-primary-300: oklch(76% 0.135 262);
+	--color-primary-400: oklch(66% 0.18 262);
+	--color-primary-500: oklch(55.2% 0.212 262);
+	--color-primary-600: oklch(47% 0.215 262);
+	--color-primary-700: oklch(39% 0.195 262);
+	--color-primary-800: oklch(31% 0.15 262);
+	--color-primary-900: oklch(23% 0.105 262);
+	--color-primary-950: oklch(15% 0.065 262);
+
+	/**
+	 * Container sizes mirror theme.json layout settings, so
+	 * `max-w-content` and `max-w-wide` track contentSize / wideSize.
+	 */
 	--container-content: var(--wp--style--global--content-size);
 	--container-wide: var(--wp--style--global--wide-size);
 
 	/**
-	 * These are the default `font-family` theme variables included with
-     * Tailwind. You can update them below by adding custom fonts at the
-	 * beginning of each value.
+	 * Font families. Inter is self-hosted via theme.json fontFace
+	 * declarations, so --wp--preset--font-family--inter resolves to
+	 * "Inter, ..." with the @font-face rules already registered.
 	 *
-	 * Default theme variables can be found in their entirety at the links
-	 * below, on GitHub or in Tailwind’s documentation, respectively:
-	 *
+	 * Default theme variables can be found in their entirety at:
 	 * https://github.com/tailwindlabs/tailwindcss/blob/main/packages/tailwindcss/theme.css
 	 * https://tailwindcss.com/docs/theme#default-theme-variable-reference
 	 */
 	--font-sans:
-		ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+		var(--wp--preset--font-family--inter), ui-sans-serif, system-ui,
+		sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+		"Noto Color Emoji";
+	--font-display:
+		var(--wp--preset--font-family--inter), ui-sans-serif, system-ui,
+		sans-serif;
 	--font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 	--font-mono:
 		ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
 		"Liberation Mono", "Courier New", monospace;
-
-	/**
-	 * Add your theme below:
-	 */
 }

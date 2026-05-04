@@ -30,3 +30,6 @@ Thumbs.db
 # Logs
 *.log
 npm-debug.log*
+
+# Claude Code (per-user local settings; project-level settings.json is fine to commit)
+.claude/settings.local.json
